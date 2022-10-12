@@ -1,0 +1,134 @@
+<%- include("./partials/headerDashboard.ejs") %>
+<style>
+    body {color : black;}
+    
+    </style>
+                  <!-- Begin Page Content -->
+                  <div class="container-fluid">
+    
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800"><b><%=found.electionName %></b></h1>
+                    <div style=" margin-top: 95px; margin-bottom: 90px;">
+                      <center>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            Status
+                          </div>
+                          <div class="col-lg-3">
+                            <%= found.status%>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            Created
+                          </div>
+                          <div class="col-lg-3">
+                            <%= found.created.toDateString() %>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-lg-6">
+                           No of polls
+                          </div>
+                          <div class="col-lg-3">
+                            <%= found.pollNo %>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            Total Votes
+                          </div>
+                          <div class="col-lg-3">
+                            <%= found.totalVotes %>
+                          </div>
+                        </div>
+                        <form action="/dashboard/election/<%=found._id%>?_method=DELETE" method="POST"><center><button class="general-btn">Cancel</button></center></form>
+                        <form action="/dashboard/election/<%=found._id%>?_method=DELETE" method="POST"><center><button class="general-btn">Start</button></center></form>
+                      </center>
+                </div>
+                <!-- /.container-fluid -->
+                <h1 class="h3 mb-4 text-gray-800"><b>Polls</b></h1>
+                <form class="row g-3 needs-validation" action="/dashboard/createElection" method="POST">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Candidates Name</label>
+                      <input type="text" name="candidateName" class="form-control" id="fullName" required>
+                      <div class="invalid-feedback">Please, enter candidate name!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Image Url</label>
+                      <input type="text" name="image" class="form-control" id="fullName" required>
+                      <div class="invalid-feedback">Please, enter image url</div>
+                    </div>
+                    <div style="margin-top: 20px;" class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Enter Candidate</button>
+                    </div>
+                  </form>
+            </div>
+            
+            <!-- End of Main Content -->
+
+               <!-- Footer -->
+               <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; ROVS 2022</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor2/jquery/jquery.min.js"></script>
+    <script src="/vendor2/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor2/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js2/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/vendor2/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js2/demo/chart-area-demo.js"></script>
+    <script src="/js2/demo/chart-pie-demo.js"></script>
+    <script src="/js2/script.js"></script>
+
+</body>
+
+</html>

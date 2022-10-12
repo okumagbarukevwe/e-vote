@@ -1,0 +1,178 @@
+
+<%- include("./partials/headerDashboard.ejs") %>
+
+                  <!-- Begin Page Content -->
+                  <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800"><b>Create Election</b></h1>
+                    <form class="row g-3 needs-validation" action="/dashboard/createElection" method="POST">
+                        <div class="col-12">
+                          <label for="yourName" class="form-label">Election Name</label>
+                          <input type="text" name="electionName" class="form-control" id="fullName" required>
+                          <div class="invalid-feedback">Please, enter election name!</div>
+                        </div>
+                        <div class="col-12">
+                          <label for="yourName" class="form-label">Number of Polls</label>
+                          <input type="text" name="pollNo" class="form-control" id="fullName" required>
+                          <div class="invalid-feedback">Please, enter election name!</div>
+                        </div>
+    
+                        <!-- <div class="col-12">
+                          <label for="yourEmail" class="form-label">No Of Polls</label>
+                          <select name="pollsNumber" class="form-control" id="yourEmail" required>
+                            <option value="">Select</option>
+                            <option value="chocolate">1</option>
+                            <option value="sardine">2</option>
+                            <option value="vanilla">3</option>
+                            <option value="vanilla">4</option>
+                            <option value="vanilla">5</option>
+                            <option value="vanilla">6</option>
+                          </select>
+                          <div class="invalid-feedback">Please enter number of polls!</div>
+                        </div> -->
+
+                        <!-- <center><button style="margin-top: 10px; margin-left: 10px; margin-bottom: 10px;" class="btn btn-primary .w-40" type="button" onclick="newinput()">Add Polls</button></center> -->
+                        <!-- <button type="button" name="button" onclick="newinput()">+</button> -->
+
+                        <!-- <div class="col-12"> -->
+                          <!-- <div class="col-12" id="add-more-fields"> -->
+                            <!-- <input type="text" name="username" class="form-control" id="yourUsername" required> -->
+                            <!-- <div class="invalid-feedback">Please choose a username.</div> -->
+                          <!-- </div> -->
+                        <!-- </div> -->
+
+                        <!-- <div class="col-12">
+                          <label for="yourUsername" class="form-label">Username</label>
+                          <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            <input type="text" name="username" class="form-control" id="yourUsername" required>
+                            <div class="invalid-feedback">Please choose a username.</div>
+                          </div>
+                        </div>
+    
+                        <div class="col-12">
+                          <label for="yourPassword" class="form-label">Password</label>
+                          <input type="password" name="password" class="form-control" id="yourPassword" required>
+                          <div class="invalid-feedback">Please enter your password!</div>
+                        </div> -->
+    
+                        <!-- <div class="col-12">
+                          <div class="form-check">
+                            <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                            <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+                            <div class="invalid-feedback">You must agree before submitting.</div>
+                          </div>
+                        </div> -->
+                        
+                        <div style="margin-top: 20px;" class="col-12">
+                          <button class="btn btn-primary w-100" type="submit">Create Election</button>
+                        </div>
+                      </form>
+                    
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+               <!-- Footer -->
+               <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; ROVS 2022</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+
+        const selectElement = document.querySelector('.ice-cream');
+
+        selectElement.addEventListener('change', (event) => {
+        const result = document.querySelector('.result');
+        result.textContent = `You like ${event.target.value}`;
+        });
+
+        function makeid(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * 
+        charactersLength));
+        }
+        return result;
+        }
+
+        console.log(makeid(5));
+
+        var id = 0;
+        var newinput = function() {
+        var parent = document.querySelector('#add-more-fields')
+        var field = document.createElement("input")
+        field.setAttribute = ("placeholder", "Enter poll name")
+        field.className = "form-control"
+        field.style = "display:block; margin-bottom: 7px;"
+        field.id = "input" + id;
+        parent.appendChild(field);
+        id += 1;
+        }
+
+     </script> -->
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor2/jquery/jquery.min.js"></script>
+    <script src="/vendor2/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor2/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js2/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/vendor2/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js2/demo/chart-area-demo.js"></script>
+    <script src="/js2/demo/chart-pie-demo.js"></script>
+    <script src="/js2/script.js"></script>
+
+</body>
+
+</html>
