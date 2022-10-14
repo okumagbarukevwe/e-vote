@@ -122,7 +122,7 @@ app.post("/dashboard/createElection", isLoggedIn, function (req, res) {
     };
     var newElection = {
       electionName: electionName,
-      totalVotes: totalVotes,
+      totalVotes: 0,
       status: status,
       author: author,
     };
@@ -198,8 +198,7 @@ app.get('/dashboard/election/:id', isLoggedIn, function (req, res) {
   //LOGOUT
 app.get('/logout', function(req, res){
     req.logout();
-    // req.flash('success', 'Logged you out successfully')
-    res.redirect('../../home')
+    res.redirect('/')
 });
   
 
